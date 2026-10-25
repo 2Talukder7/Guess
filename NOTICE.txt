@@ -1,0 +1,38 @@
+THIRD-PARTY NOTICE - English word list
+=====================================
+The word list in public/data/words.js is derived from SCOWL (Spell Checker Oriented Word Lists)
+via the hunspell en_US dictionary. The original copyright and permission notice follows.
+
+SCOWL (Spell Checker Oriented Word Lists) is a collection of 
+English word lists maintained by Kevin Atkinson 
+<kevina@users.sourceforge.net>
+
+It was downloaded from:
+http://prdownloads.sourceforge.net/wordlist/scowl-5.tar.gz
+
+SF project page:
+http://wordlist.sourceforge.net/
+
+Copyright: (extracted from the SCOWL README file):
+
+The collective work is Copyright 2000-2011 by Kevin Atkinson as well
+as any of the copyrights mentioned below:
+
+  Copyright 2000-2011 by Kevin Atkinson
+
+  Permission to use, copy, modify, distribute and sell these word
+  lists, the associated scripts, the output created from the scripts,
+  and its documentation for any purpose is hereby granted without fee,
+  provided that the above copyright notice appears in all copies and
+  that both that copyright notice and this permission notice appear in
+  supporting documentation. Kevin Atkinson makes no representations
+  about the suitability of this array for any purpose. It is provided
+  "as is" without express or implied warranty.
+
+Alan Beale <biljir@pobox.com> also deserves special credit as he has,
+in addition to providing the 12Dicts package and being a major
+contributor to the ENABLE word list, given me an incredible amount of
+feedback and created a number of special lists (those found in the
+Supplement) in order to help improve the overall quality of SCOWL.
+
+The Moby Words II material mentioned in SCOWL's README was explicitly placed in the public domain.

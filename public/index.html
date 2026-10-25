@@ -1,0 +1,32 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>Guess - Word. Play. Learn.</title>
+<meta name="description" content="Guess: a falling-letter word puzzle that builds vocabulary.">
+<link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#0b0d2e">
+<link rel="icon" href="icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css"></head>
+<body class="night">
+<div id="bg"><i id="bn"></i><i id="bd"></i></div>
+<div id="st" class="port">
+<div id="logo" class="a"><svg id="crown" viewBox="0 0 44 30"><path d="M3 26 L1 7 12 15 22 2 32 15 43 7 41 26Z" fill="#ffc400" stroke="#7a3b00" stroke-width="2.5" stroke-linejoin="round"/></svg><b>GUESS</b><i>Word. Play. Learn.</i></div>
+<div id="mode" class="a k"><small id="mt">MODE:</small><b id="mn" style="font-size:22px;color:#ffc400">NIGHT</b></div>
+<button id="snd" class="a k ib"></button>
+<button id="pz" class="a k ib"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="5" y="4" width="5" height="16" rx="1.5"/><rect x="14" y="4" width="5" height="16" rx="1.5"/></svg></button>
+<div class="a col lc">
+<div class="k"><small>SCORE</small><b id="sc">0</b></div><div class="k"><small>HIGH SCORE</small><b id="hi">0</b></div><div class="k"><small>LEVEL</small><b id="lv">1</b></div><div class="k"><small>WORDS</small><b id="wd">0</b></div><div class="k"><small>TIME</small><b id="tm2">00:00</b></div></div>
+<canvas id="cv" class="a"></canvas>
+<div class="a col rc">
+<div class="k nx"><small>NEXT BLOCK</small><canvas id="nc"></canvas></div>
+<div class="k th"><small>THEME</small><div style="display:flex;gap:6px;margin-top:8px"><button class="tb" id="ts"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" fill="#ffc400"/><path d="M12 1v3M12 20v3M1 12h3M20 12h3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="#ffc400" stroke-width="2" stroke-linecap="round"/></svg></button><button class="tb" id="tm"><svg viewBox="0 0 24 24"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5z" fill="#8fb4ff"/></svg></button></div></div>
+<div class="k ph" id="phc"></div></div>
+<div id="toast" class="a k"><small id="tl">WORD CLEARED!</small><b id="tw">-</b><em id="tp"></em></div>
+<div id="hint" class="a k"></div>
+<div id="pad" class="a k"><small>CONTROLS</small><div id="g3"><button class="bt" id="bu">&#8593;</button><button class="bt" id="bl" style="grid-row:2;grid-column:1">&#8592;</button><button class="bt" id="bd2" style="grid-row:2;grid-column:2">&#8595;</button><button class="bt" id="br" style="grid-row:2;grid-column:3">&#8594;</button></div></div>
+<div id="tip" class="a k"><span id="tip1">Longer words = higher scores!</span><span id="tip2"><small>KEYBOARD</small><span>&#8592; &#8594; move</span><span>&#8593; rotate</span><span>&#8595; drop</span><span>Space rotate / grab</span><span>P pause</span><span>V change voice</span></span></div>
+</div>
+<div id="ov"><div id="bx"><h1 id="oh"></h1><p id="op"></p><button id="go"></button></div></div>
+<canvas id="fx"></canvas>
+<script src="data/words.js"></script>
+<script src="js/game.js"></script></body></html>

@@ -1,0 +1,62 @@
+
+*{box-sizing:border-box;margin:0}
+html,body{position:fixed;inset:0;width:100%;height:100%;overflow:hidden;overscroll-behavior:none;touch-action:manipulation;font-family:Fredoka,"Arial Rounded MT Bold","Trebuchet MS",system-ui,sans-serif;user-select:none;-webkit-user-select:none;-webkit-tap-highlight-color:transparent}
+body.night{background:#05061a;--pan:rgba(12,14,52,.6);--bd:rgba(80,140,255,.75);--tx:#fff;--mu:#b9c4ff;--gl:0 0 16px rgba(70,120,255,.5);--bo:rgba(8,10,40,.5)}
+body.day{background:#b9d3ea;--pan:rgba(255,255,255,.62);--bd:rgba(255,255,255,.95);--tx:#143049;--mu:#4c6a85;--gl:0 4px 14px rgba(40,90,140,.25);--bo:rgba(255,255,255,.38)}
+#bg i{position:fixed;inset:-6%;background-size:cover;background-position:center;filter:blur(3px) saturate(1.1);transition:opacity .9s;opacity:0}
+#bn{background-image:url(../assets/bg-night.jpg)}#bd{background-image:url(../assets/bg-day.jpg)}
+body.night #bn,body.day #bd{opacity:.72}
+#st{position:absolute;left:50%;top:50%;width:720px;height:1080px;transform-origin:0 0;color:var(--tx)}
+.a{position:absolute}
+.k{background:var(--pan);border:2px solid var(--bd);border-radius:20px;box-shadow:var(--gl);backdrop-filter:blur(6px);padding:10px;text-align:center;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.k small{font-size:15px;color:var(--mu);letter-spacing:.5px}.k b{font-size:30px;font-weight:700}
+.col{display:flex;flex-direction:column;gap:10px}.col .k{flex:1;position:relative}.ph{flex:1}
+#logo{left:22px;top:24px}#logo b{display:block;font:700 76px/1 Fredoka,sans-serif;background:linear-gradient(#fff5a8,#ffc400 55%,#ff9500);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 4px 0 #7a3b00) drop-shadow(0 0 10px #4b7bff)}
+#logo i{display:block;font:italic 700 17px Fredoka,sans-serif;color:var(--tx);margin:-2px 0 0 12px;border-bottom:3px solid #ffb400;width:206px}
+#crown{position:absolute;left:12px;top:-18px;width:44px}
+#mode{left:306px;top:30px;width:184px;height:52px;flex-direction:row;gap:10px;font-size:19px;cursor:pointer;padding:0}
+.ib{width:54px;height:54px;padding:0;cursor:pointer;color:var(--tx);border-radius:16px}.ib svg{width:28px;height:28px}
+#cv{width:416px;height:676px;touch-action:none;border-radius:6px;background:var(--bo);box-shadow:0 0 0 3px var(--bd),var(--gl);display:block}
+#nc{width:104px;height:56px;margin-top:8px}
+.tb{width:48px;height:48px;border-radius:14px;border:2px solid transparent;background:transparent;cursor:pointer;padding:6px}
+body.night #ts,body.day #tm{opacity:.45}body.night #tm,body.day #ts{border-color:var(--bd);box-shadow:var(--gl)}
+#bar{width:100%;height:10px;border-radius:6px;background:rgba(127,127,127,.3);margin-top:8px;overflow:hidden}#bar i{display:block;height:100%;width:0;background:#3ccb4d}
+#pad{left:420px;top:816px;width:286px;height:200px;align-items:stretch;justify-content:flex-start;padding:10px 16px}
+#pad small{text-align:left}#g3{display:grid;grid-template-columns:repeat(3,68px);gap:8px;justify-content:center;margin-top:4px}
+.bt{width:68px;height:68px;border-radius:50%;border:3px solid #2f7bff;background:radial-gradient(#2a58d8,#16308f);color:#fff;font:700 38px/1 Fredoka,sans-serif;cursor:pointer;box-shadow:0 0 14px rgba(70,120,255,.6);touch-action:none}
+/* .on = pressed from the keyboard, so the on-screen buttons mirror the keys on PC */
+.bt:active,.bt.on{transform:scale(.92);filter:brightness(1.45);box-shadow:0 0 24px rgba(130,175,255,.95)}#bu{grid-column:2}
+#hint{left:14px;top:928px;width:392px;height:88px;font-size:15px;line-height:1.25}
+#toast{left:14px;top:816px;width:392px;height:104px;align-items:flex-start;padding:10px 18px}
+#toast b{font-size:38px;line-height:1}#toast small{color:#5ee27a;font-weight:700}#toast em{position:absolute;right:16px;top:30px;font:700 30px Fredoka;color:#5ee27a;font-style:normal}
+#tip{left:14px;top:1026px;width:692px;height:40px;flex-direction:row;font-size:17px;padding:0;border-radius:14px}
+body.day #toast small,body.day #toast em{color:#0f7a35}
+body.paused #cv{filter:blur(8px)}
+#ov{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(5,6,26,.62);z-index:9}
+#bx{width:min(88vw,380px);padding:26px 22px;background:var(--pan);border:2px solid var(--bd);border-radius:24px;box-shadow:var(--gl);backdrop-filter:blur(10px);text-align:center;color:var(--tx)}
+#bx h1{font-size:34px}#bx p{margin:12px 0 18px;font-size:17px;line-height:1.35;color:var(--mu)}
+#go{font:700 24px Fredoka,sans-serif;padding:12px 44px;border-radius:30px;border:0;color:#3a1d00;background:linear-gradient(#ffe066,#ffa800);box-shadow:0 5px 0 #a35a00;cursor:pointer}
+
+#tip2{display:none}
+@media (hover:hover) and (pointer:fine){#tip1{display:none}#tip2{display:inline}}
+#tip2>span:not(:last-child)::after{content:" \00b7 "}#tip2>small{display:none}
+/* default (portrait) positions of the three columns */
+#snd{left:528px;top:29px}#pz{left:592px;top:29px}
+.lc{left:14px;top:134px;width:126px;height:676px}.rc{left:582px;top:134px;width:126px;height:676px}
+.nx{flex:0 0 150px!important}.th{flex:0 0 140px!important}
+/* ===== wide layout (PC / laptop / tablet landscape): the stage is 1280x720 so the board uses the full window height ===== */
+#st.land{width:1280px;height:720px}
+.land #logo{left:26px;top:12px}.land #logo b{font-size:50px}.land #logo i{font-size:14px;width:136px;margin-left:6px}.land #crown{width:30px;left:6px;top:-12px}
+.land #mode{left:300px;top:18px;width:200px;height:48px}.land #snd{left:1130px;top:14px}.land #pz{left:1196px;top:14px}
+.land .lc{left:24px;top:84px;width:170px;height:620px}
+.land .rc{left:634px;top:84px;width:622px;height:150px;flex-direction:row}
+.land .nx,.land .th{flex:1!important}.land .ph{flex:1}
+.land .k small{font-size:16px}.land .k b{font-size:34px}
+.land #toast{left:634px;top:250px;width:622px;height:116px;padding:12px 24px}.land #toast b{font-size:42px}.land #toast em{right:24px;top:36px;font-size:34px}
+.land #hint{left:634px;top:380px;width:622px;height:96px;font-size:19px}
+.land #pad{left:634px;top:490px;width:330px;height:214px}
+.land #tip{left:978px;top:490px;width:278px;height:214px;flex-direction:column;padding:12px 16px;font-size:17px}
+.land #tip2{flex-direction:column;align-items:center;gap:5px}.land #tip2>small{display:block;margin-bottom:3px}.land #tip2>span::after{content:none!important}
+@media (hover:hover) and (pointer:fine){.land #tip2{display:flex}}
+/* cursor glitter layer: never intercepts clicks */
+#fx{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:30}
