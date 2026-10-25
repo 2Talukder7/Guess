@@ -4,6 +4,8 @@
 
 Guess combines falling-block mechanics with vocabulary puzzles. Move and rotate pairs of letters as they fall, build words, and clear them from the board. When the stack fills up, switch to a letter-swapping phase and find new words to keep the game going.
 
+🌐 Live Demo: https://guess-r9do.onrender.com
+
 ## ✨ Features
 
 - 🧩 **Two-phase gameplay** — stack falling letter pairs, then swap neighbouring letters to discover words.
